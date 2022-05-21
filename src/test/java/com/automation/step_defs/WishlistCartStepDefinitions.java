@@ -10,6 +10,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,11 +35,16 @@ public class WishlistCartStepDefinitions {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
         System.out.println("You landed on homepage");
+        BrowserUtils.waitFor(1);
+        WebElement cookies = Driver.get().findElement(By.xpath("//*[.='Accept all']"));
+        cookies.click();
+        BrowserUtils.waitFor(1);
     }
 
     @Given("I add four different products to my wishlist")
     public void i_add_four_different_products_to_my_wishlist() {
-        shopPage.shopModule.click();
+        Driver.get().findElement(shopPage.shopModule1).click();
+//        shopPage.shopModule.click();
         System.out.println("You are in Shop page");
         expectedItems = shopPage.addToWishlistFourItems();
         BrowserUtils.waitFor(1);
@@ -45,7 +52,8 @@ public class WishlistCartStepDefinitions {
 
     @When("I view my wishlist table")
     public void i_view_my_wishlist_table() {
-        wishlistPage.wishlistHeart.click();
+        Driver.get().findElement(wishlistPage.wishlistHeart1).click();
+//        wishlistPage.wishlistHeart.click();
         System.out.println("You are in Wishlist page");
         BrowserUtils.waitFor(1);
     }
@@ -99,7 +107,8 @@ public class WishlistCartStepDefinitions {
     @Then("I verify the item in my cart")
     public void i_verify_the_item_in_my_cart() {
         BrowserUtils.waitFor(1);
-        wishlistPage.cartBag.click();
+        Driver.get().findElement(wishlistPage.cartBag1).click();
+//        wishlistPage.cartBag.click();
         BrowserUtils.waitFor(1);
         int expectedPrice = lowestPrice;
         int actualPrice = Integer.parseInt(cartPage.priceItemInCart.getText().substring(1,3));
