@@ -7,11 +7,17 @@ This repository contains a collection of sample selenium-cucumber-java projects 
 **Installation (pre-requisites)**
 
 JDK 1.8+ (make sure Java class path is set)
+
 Maven (make sure .m2 class path is set)
+
 IntelliJ/Eclipse
+
 IntelliJ/Eclipse Plugins for
+
 Maven
+
 Cucumber
+
 Git
 
 **Framework set up**
@@ -49,24 +55,24 @@ To run specific feature if you have multiple feature files use, mvn test -Dcucum
 
 Once you run your tests, the framework generates the various types of reports taking screenshots of failures and errors automatically. This framework selenium-cucumber-java uses several different types of test reporters to communicate pass/failure.
 
-**Cucumber Report:** 
+**Cucumber Report:**
 
-![](../../Desktop/Screenshot 2022-05-21 at 18.24.43.png)
+<img src="../../Desktop/Screenshot 2022-05-21 at 18.24.43.png"/>
 
-![](../../Desktop/Screenshot 2022-05-21 at 18.24.54.png)
+<img src="../../Desktop/Screenshot 2022-05-21 at 18.24.54.png"/>
 
-![](../../Desktop/Screenshot 2022-05-21 at 18.25.16.png)
+<img src="../../Desktop/Screenshot 2022-05-21 at 18.25.16.png"/>
 
-![](../../Desktop/Screenshot 2022-05-21 at 18.25.37.png)
+<img src="../../Desktop/Screenshot 2022-05-21 at 18.25.37.png"/>
 
 **HTML Report:**
 
-![](../../Desktop/Screenshot 2022-05-21 at 18.38.44.png)
+<img src="../../Desktop/Screenshot 2022-05-21 at 18.38.44.png"/>
 
 
 **JSON Report:**
 
-![](../../Desktop/Screenshot 2022-05-21 at 18.40.16.png)
+<img src="../../Desktop/Screenshot 2022-05-21 at 18.40.16.png"/>
 
 
 Developed automation scripts using the BDD approach
