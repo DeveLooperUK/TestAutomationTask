@@ -45,16 +45,24 @@ Reporters
 Once you run your tests, the framework generates the various types of reports taking screenshots of failures and errors automatically. This framework selenium-cucumber-java uses several different types of test reporters to communicate pass/failure.
 
 Cucumber Report: 
-    
+![cucumber-report2](https://user-images.githubusercontent.com/57773219/169893556-bd297ea9-6525-4025-9510-d0ffef73015f.png)
+
+![cucumber-report1](https://user-images.githubusercontent.com/57773219/169893559-74481f44-d28a-4835-8ec5-05fbebc83d7a.png)
+
+![cucumbe-report4](https://user-images.githubusercontent.com/57773219/169893544-11f27532-58ab-4468-8547-b6d3d18ebb1a.png)
+
+![cucumber-report3](https://user-images.githubusercontent.com/57773219/169893553-7bda9287-5494-411b-95fd-ab563384f681.png)
 
 
 HTML Report:
 
- 
+ ![html-report](https://user-images.githubusercontent.com/57773219/169893617-e6712308-1d84-4b57-a011-c7fb2cfc1a37.png)
+
 
 JSON Report:
 
  
+![surfire-report](https://user-images.githubusercontent.com/57773219/169893638-0806ceb2-d713-4d5e-9c98-cefce6d6b77d.png)
 
 
 
