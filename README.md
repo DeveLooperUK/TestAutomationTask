@@ -1,30 +1,24 @@
 # TestAutomationTask
 
-**Selenium-Cucumber-Java**
+##Selenium-Cucumber-Java
 
 This repository contains a collection of sample selenium-cucumber-java projects and libraries that demonstrate how to use the tool and develop automation scripts using the Cucumber BDD framework with Java as a programming language. It automatically generates Surfire, Cucumber, HTML and JSON reporters as well. It also generates screenshots for your tests if you enable it and also generates error shots for your failed test cases as well.
 
-**Installation (pre-requisites)**
+##Installation (pre-requisites)
 
 JDK 1.8+ (make sure Java class path is set)
-
 Maven (make sure .m2 class path is set)
-
 IntelliJ/Eclipse
-
 IntelliJ/Eclipse Plugins for
-
 Maven
-
 Cucumber
-
 Git
 
-**Framework set up**
+#Framework set up
 
-Fork / Clone repository from here or download zip and set it up in your local workspace.
+Fork / Clone repository from [here](https://github.com/DeveLooperUK/TestAutomationTask.git) or download zip and set it up in your local workspace.
 
-**Framework Overview**
+##Framework Overview
 
 The cucumber BDD testing framework specifies acceptance tests as written from the view of the Product Owner. Using keywords such as Given, When, Then and And, acceptance criteria tests known as feature files can then be broken down into testable steps. Cucumber Selenium framework runs by specifying the test cases using tags that are to be run.
 Cucumber Selenium - Overall test framework leveraging the Cucumber framework with Selenium written in JAVA.
@@ -42,7 +36,7 @@ Configuration.properties - It is used to manage credentials and access points th
 
 
 
-**Run Some Sample Tests**
+#Run Some Sample Tests
 
 Open terminal (MAC OSX) or command prompt / power shell (for windows OS) and navigate to the project directory type mvn verify or mvn test command to run features. With this command, it will invoke the default Chrome browser and will execute the tests.
 
@@ -51,33 +45,41 @@ Please note that browser drivers are not included as part of this framework. The
 
 To run specific feature if you have multiple feature files use, mvn test -Dcucumber.options="classpath:features/my_first.feature"
 
-**Reporters**
+##Reporters
 
 Once you run your tests, the framework generates the various types of reports taking screenshots of failures and errors automatically. This framework selenium-cucumber-java uses several different types of test reporters to communicate pass/failure.
 
-**Cucumber Report:**
+##Cucumber Report:
 
-<img src="../../Desktop/Screenshot 2022-05-21 at 18.24.43.png"/>
+![cucumber-report2](https://user-images.githubusercontent.com/57773219/169893556-bd297ea9-6525-4025-9510-d0ffef73015f.png)
 
-<img src="../../Desktop/Screenshot 2022-05-21 at 18.24.54.png"/>
+![cucumber-report1](https://user-images.githubusercontent.com/57773219/169893559-74481f44-d28a-4835-8ec5-05fbebc83d7a.png)
 
-<img src="../../Desktop/Screenshot 2022-05-21 at 18.25.16.png"/>
+![cucumbe-report4](https://user-images.githubusercontent.com/57773219/169893544-11f27532-58ab-4468-8547-b6d3d18ebb1a.png)
 
-<img src="../../Desktop/Screenshot 2022-05-21 at 18.25.37.png"/>
-
-**HTML Report:**
-
-<img src="../../Desktop/Screenshot 2022-05-21 at 18.38.44.png"/>
+![cucumber-report3](https://user-images.githubusercontent.com/57773219/169893553-7bda9287-5494-411b-95fd-ab563384f681.png)
 
 
-**JSON Report:**
+##HTML Report:
 
-<img src="../../Desktop/Screenshot 2022-05-21 at 18.40.16.png"/>
+![html-report](https://user-images.githubusercontent.com/57773219/169893617-e6712308-1d84-4b57-a011-c7fb2cfc1a37.png)
+
+
+##JSON Report:
+
+
+![surfire-report](https://user-images.githubusercontent.com/57773219/169893638-0806ceb2-d713-4d5e-9c98-cefce6d6b77d.png)
+
+
+
+
+
+
 
 
 Developed automation scripts using the BDD approach
 
-Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at https://cucumber.io/docs/reference A typical test will look similar to this:
+Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at [https://cucumber.io/docs/reference](https://cucumber.io/docs/gherkin/) A typical test will look similar to this:
 
 Feature: Performing a Yahoo Search
 
@@ -103,17 +105,16 @@ Feature: Performing a Yahoo Search
         |searchItem|
         |"Selenium Webdriver"|
 
-**The Page Object Design Pattern**
+#The Page Object Design Pattern
 
 Within your Web App's UI there are areas that your tests interact. A Page Object simply models these as objects within the test code. This reduces the amount of duplicated code and means that if the UI changes, the fix need only be applied in one place. In other wards, one of the challenges of writing test automation is keeping your [selectors] ( classes, id's, or xpath' etc.) up to date with the latest version of your code. The next challenge is to keep the code you write nice and DRY (Don't Repeat Yourself). The page object pattern helps us accomplish this in one solution. Instead of including our selectors in our step definitions(in Cucumber) we instead place them in a .java file where we can manage all these selectors and methods together. Your test file should only call the test methods.
 
 You can also place reusable methods or logic inside of these pages and call them from your step definitions java files. The page object serves as a layer of abstraction between tests and code. When A test fails, it fails on an individual step. That step may call a selector that is no longer valid, but that selector may be used by many other steps. By having a single source of truth of what the selector is supposed to be, fixing one selector on the page object could repair a number of failing tests that were affected by the same selector.
 
-**Contribution**
+#Contribution
 
 Create a fork of the project into your own repository. Make all your necessary changes and create a pull request with a description on what was added or removed and details explaining the changes in lines of code. If approved, project owners will merge it.
 
 Licensing
-
 MIT
 ![image](https://user-images.githubusercontent.com/57773219/169663491-2f6baffd-ce43-4282-8694-89ad948d79ea.png)
