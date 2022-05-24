@@ -1,9 +1,11 @@
 # TestAutomationTask
 
-Selenium-Cucumber-Java
+#Selenium-Cucumber-Java
+
 This repository contains a collection of sample selenium-cucumber-java projects and libraries that demonstrate how to use the tool and develop automation scripts using the Cucumber BDD framework with Java as a programming language. It automatically generates Surfire, Cucumber, HTML and JSON reporters as well. It also generates screenshots for your tests if you enable it and also generates error shots for your failed test cases as well.
 
-Installation (pre-requisites)
+#Installation (pre-requisites)
+
 JDK 1.8+ (make sure Java class path is set)
 Maven (make sure .m2 class path is set)
 IntelliJ/Eclipse
@@ -12,10 +14,10 @@ Maven
 Cucumber
 Git
 
-Framework set up
+#Framework set up
 Fork / Clone repository from [here](https://github.com/DeveLooperUK/TestAutomationTask.git) or download zip and set it up in your local workspace.
 
-Framework Overview
+#Framework Overview
 
 The cucumber BDD testing framework specifies acceptance tests as written from the view of the Product Owner. Using keywords such as Given, When, Then and And, acceptance criteria tests known as feature files can then be broken down into testable steps. Cucumber Selenium framework runs by specifying the test cases using tags that are to be run.
 Cucumber Selenium - Overall test framework leveraging the Cucumber framework with Selenium written in JAVA.
@@ -33,7 +35,8 @@ Configuration.properties - It is used to manage credentials and access points th
 
 
 
-Run Some Sample Tests
+#Run Some Sample Tests
+
 Open terminal (MAC OSX) or command prompt / power shell (for windows OS) and navigate to the project directory type mvn verify or mvn test command to run features. With this command, it will invoke the default Chrome browser and will execute the tests.
 
 To run features on the specific browser to be used, mvn verify "-Dbrowser=browser_name" browser_name can be one of the following but make sure that the browser‚  driver file is present and specified in the system variable. -- firefox -- chrome -- ie -- safari etc.
@@ -41,7 +44,8 @@ Please note that browser drivers are not included as part of this framework. The
 
 To run specific feature if you have multiple feature files use, mvn test -Dcucumber.options="classpath:features/my_first.feature"
 
-Reporters
+#Reporters
+
 Once you run your tests, the framework generates the various types of reports taking screenshots of failures and errors automatically. This framework selenium-cucumber-java uses several different types of test reporters to communicate pass/failure.
 
 Cucumber Report: 
@@ -99,12 +103,14 @@ Feature: Performing a Yahoo Search
         |searchItem|
         |"Selenium Webdriver"|
 
-The Page Object Design Pattern
+#The Page Object Design Pattern
+
 Within your Web App's UI there are areas that your tests interact. A Page Object simply models these as objects within the test code. This reduces the amount of duplicated code and means that if the UI changes, the fix need only be applied in one place. In other wards, one of the challenges of writing test automation is keeping your [selectors] ( classes, id's, or xpath' etc.) up to date with the latest version of your code. The next challenge is to keep the code you write nice and DRY (Don't Repeat Yourself). The page object pattern helps us accomplish this in one solution. Instead of including our selectors in our step definitions(in Cucumber) we instead place them in a .java file where we can manage all these selectors and methods together. Your test file should only call the test methods.
 
 You can also place reusable methods or logic inside of these pages and call them from your step definitions java files. The page object serves as a layer of abstraction between tests and code. When A test fails, it fails on an individual step. That step may call a selector that is no longer valid, but that selector may be used by many other steps. By having a single source of truth of what the selector is supposed to be, fixing one selector on the page object could repair a number of failing tests that were affected by the same selector.
 
-Contribution
+#Contribution
+
 Create a fork of the project into your own repository. Make all your necessary changes and create a pull request with a description on what was added or removed and details explaining the changes in lines of code. If approved, project owners will merge it.
 
 Licensing
