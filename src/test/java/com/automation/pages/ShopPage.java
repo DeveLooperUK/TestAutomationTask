@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,30 +19,25 @@ public class ShopPage extends BasePage{
     @FindBy(xpath = "/html/body/div[3]/div[3]/div/div/article/ul/li/a[1]/h2")
     public List<WebElement> itemsTitle;
 
+    public By addToWishlistLocator = By.xpath("/html/body/div[3]/div[3]/div/div/article/ul/li/div/div[2]/div/div");
+
     public ArrayList<String> addToWishlistFourItems(){
         List<String> allItemsNames = BrowserUtils.getElementsText(itemsTitle);
         ArrayList<String> selectedItemsNames = new ArrayList<>();
+        List<WebElement> addToWishlistByBy = Driver.get().findElements(addToWishlistLocator);
+
         for (int i = 0; i < 4; i++) {
-            int n = (int)(Math.random() * (12));
-            if (addToWishlist.get(n).getText().equals("Product added! Browse wishlist")) {
-                n = (int)(Math.random() * (12));
-                if (addToWishlist.get(n).getText().equals("Product added! Browse wishlist")) {
-                    n = (int)(Math.random() * (12));
-                    selectedItemsNames.add(allItemsNames.get(n));
-                    addToWishlist.get(n).click();
-                    BrowserUtils.waitFor(1);
-                }
-                else{
-                    selectedItemsNames.add(allItemsNames.get(n));
-                    addToWishlist.get(n).click();
-                    BrowserUtils.waitFor(1);
-                }
-            }
-            else {
-                selectedItemsNames.add(allItemsNames.get(n));
-                addToWishlist.get(n).click();
-                BrowserUtils.waitFor(1);
-            }
+            int n = (int)(Math.random() * (12-i));
+            selectedItemsNames.add(allItemsNames.get(n));
+            addToWishlistByBy.get(n).click();
+            System.out.println("addToWishlistStaticBEFORE size: " + addToWishlistByBy.size());
+            System.out.println("allItemsNamesBEFORE size: " + allItemsNames.size());
+            BrowserUtils.waitFor(1);
+            addToWishlistByBy.remove(n);
+            allItemsNames.remove(n);
+            System.out.println("addToWishlistStaticAFTER size: " + addToWishlistByBy.size());
+            System.out.println("allItemsNamesAFTER size: " + allItemsNames.size());
+            BrowserUtils.waitFor(1);
         }
 
         // verify the list
