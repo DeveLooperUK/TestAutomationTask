@@ -21,9 +21,9 @@ public class ShopPage extends BasePage{
 
     public By addToWishlistLocator = By.xpath("/html/body/div[3]/div[3]/div/div/article/ul/li/div/div[2]/div/div");
 
-    public ArrayList<String> addToWishlistFourItems(){
+    public List<String> addToWishlistFourItems(){
         List<String> allItemsNames = BrowserUtils.getElementsText(itemsTitle);
-        ArrayList<String> selectedItemsNames = new ArrayList<>();
+        List<String> selectedItemsNames = new ArrayList<>();
         List<WebElement> addToWishlistByBy = Driver.get().findElements(addToWishlistLocator);
 
         for (int i = 0; i < 4; i++) {
